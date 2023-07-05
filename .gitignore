@@ -1,5 +1,6 @@
 src\services\api-client.ts
 # Logs
+src\services\api-client.ts
 logs
 *.log
 npm-debug.log*
