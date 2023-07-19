@@ -10,7 +10,7 @@ export interface Genre {
   image_background: string;
 }
 
- const useGenersQuery = () => useQuery({
+ const useGenres = () => useQuery({
   queryKey: ['genres'],
   queryFn: () => 
     apiClient.get<FetchResponse<Genre>>("/genres")
@@ -19,7 +19,5 @@ export interface Genre {
     initialData: genres
 });
 
-// const useGenres = () => ({ data: genres, isLoading: false, error: null })
-const useGenres = () => useGenersQuery();
 
 export default useGenres;
