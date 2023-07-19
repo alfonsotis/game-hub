@@ -13,7 +13,7 @@ const usePlatforms = () => useQuery({
     queryKey: ["platforms"],
     queryFn: () => apiClient.get<FetchResponse<Platfrom>>('/platforms')
         .then(res=>res.data.results),
-        staleTime: 24*60*60*1000,
+        staleTime: 24 * 60 * 60 * 1000,
         initialData: platforms
 });
 
