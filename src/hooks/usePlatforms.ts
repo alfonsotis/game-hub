@@ -3,7 +3,7 @@ import platforms from "../data/platforms";
 import apiClient, { FetchResponse } from "../services/api-client";
 
 
-interface Platfrom {
+export interface Platform {
     id: number,
     name: string,
     slug: string;
@@ -11,7 +11,7 @@ interface Platfrom {
 
 const usePlatforms = () => useQuery({
     queryKey: ["platforms"],
-    queryFn: () => apiClient.get<FetchResponse<Platfrom>>('/platforms/lists/parents')
+    queryFn: () => apiClient.get<FetchResponse<Platform>>('/platforms/lists/parents')
         .then(res=>res.data.results),
         staleTime: 24 * 60 * 60 * 1000, // 24h
         initialData: platforms
